@@ -23,7 +23,7 @@ const addSixWithLogs = pipe(
   addTwo,
   tap(logWithInfo('added two')),
   addThree,
-  tap(logWithInfo('output'))
+  tap(logWithInfo('added three'))
 )
 
 addSixWithLogs(4);

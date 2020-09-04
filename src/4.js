@@ -16,16 +16,16 @@ console.log('juxt answer', addNumToVarious(6));
 
 
 const addLots = pipe(
-  addNumToVarious,
+  juxt([addOne, addTwo, addThree]),
   addAll
 );
 
 const addLotsWithLogs = pipe(
   tap(logWithInfo('input')),
-  addNumToVarious,
+  juxt([addOne, addTwo, addThree]),
   tap(logWithInfo('after juxt')),
   addAll,
-  tap(logWithInfo('output'))
+  tap(logWithInfo('after adding all together'))
 );
 
 addLotsWithLogs(6);
